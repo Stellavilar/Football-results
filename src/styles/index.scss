@@ -14,6 +14,8 @@ code {
 
 $grey: #ecf0f1;
 $blue: #024BAE;
+$bg: url('../img/soccer.jpg');
+$mobile: url('../img/soccerMobile.jpeg');
 
 /*Desktop version*/
 
@@ -34,6 +36,14 @@ $blue: #024BAE;
   .burger-button {
     display: none;
   }
+
+}
+
+.homepage {
+  height: 120vh;
+  background-image: $bg;
+  background-repeat: no-repeat;
+  background-size: 100%;
 
 }
 
@@ -59,4 +69,5 @@ $blue: #024BAE;
       }
     } 
   }
+  
 }
