@@ -77,6 +77,12 @@ a {
 
 .league {
   background-image: none;
+
+  .MuiPaper-elevation1 {
+    padding: 10px;
+    box-shadow: none;
+    border-bottom: solid 0.5px $grey;
+  }
 }
 
 
