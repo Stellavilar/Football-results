@@ -41,15 +41,39 @@ $mobile: url('../img/soccerMobile.jpeg');
 
 .homepage {
   height: 120vh;
-  background-image: $bg;
+  background-image: $mobile;
   background-repeat: no-repeat;
   background-size: 100%;
+  text-align: center;
 
+    .homepage-items {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 10%;
+      margin: 5%;
+    }
+
+    .MuiButton-contained {
+      padding: 50px;
+      margin-bottom: 50px;
+    }
+
+    .MuiButton-label {
+      font-size: 2em;
+      color: $blue;
+    }
+
+    .MuiTypography-h2 {
+      color: $blue;
+      font-weight: 900;
+      padding-top: 10%;
+    }
 }
 
 
 /*Mobile version*/
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1400px) {
   .header {
 
     display: flex;
@@ -68,6 +92,39 @@ $mobile: url('../img/soccerMobile.jpeg');
         background-color: $blue;
       }
     } 
+  }
+
+  .homepage {
+
+    background-image: $mobile;
+    background-position: center;
+    background-attachment: fixed;       
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100vh;
+    width:100%; 
+
+    .homepage-items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .MuiButton-contained {
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+
+    .MuiButton-label {
+      font-size: 1.5em;
+    }
+
+    .MuiTypography-h2 {
+      font-size: 2em;
+      font-weight: 900;
+      padding-top: 10%;
+    }
   }
   
 }

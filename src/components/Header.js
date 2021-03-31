@@ -21,10 +21,14 @@ function Header() {
 
     //Onclick title tab, dispatch title on Homepage
     const handleClick = (e) => {
-      dispatch(selectTitle(
-          e.target.innerHTML
-      ))
-  }
+      dispatch(selectTitle({
+          name: e.target.innerText, 
+          item1: 'Classement',
+          item2: 'Calendrier',
+          item3: 'Meilleurs buteurs',
+        }));
+        
+    };
 
   return (
       <div className="header">

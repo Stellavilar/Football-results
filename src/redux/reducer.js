@@ -6,7 +6,6 @@ const initialState = {
   };
 
 export const reducer = (state = initialState, action = {}) => {
-    // let newTitle;
     switch(action.type) {
         case SELECT_TITLE:
             return {
