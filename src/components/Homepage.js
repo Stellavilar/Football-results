@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Typography, Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 
 function Homepage() {
@@ -15,15 +16,21 @@ function Homepage() {
                     <div className="homepage-items">
                         {titles.title.name ?  
                         <>
-                         <Button variant="contained" href="#">
-                            {titles.title.item1}
-                        </Button>
-                        <Button variant="contained" href="#">
-                            {titles.title.item2}
-                        </Button>
-                        <Button variant="contained" href="#">
-                            {titles.title.item3}
-                        </Button>
+                        <Link to={`/classement/${titles.title.name.replace(/\s+/g, '').toLowerCase()}`}>
+                            <Button variant="contained">
+                                {titles.title.item1}
+                            </Button>
+                        </Link>
+                        <Link to={`/classement/${titles.title.name.replace(/\s+/g, '').toLowerCase()}`}>
+                            <Button variant="contained">
+                                {titles.title.item2}
+                            </Button>
+                        </Link>
+                        <Link to={`/classement/${titles.title.name.replace(/\s+/g, '').toLowerCase()}`}>
+                            <Button variant="contained">
+                                {titles.title.item3}
+                            </Button>
+                        </Link>
                         </> 
                         : null}
                     </div>

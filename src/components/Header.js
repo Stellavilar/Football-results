@@ -9,7 +9,6 @@ import { useDispatch } from 'react-redux';
 import BurgerMenu from './BurgerMenu';
 
 function Header() {
-
     //Use dispatch to get titles clicked
     const dispatch = useDispatch();
 
@@ -32,7 +31,7 @@ function Header() {
 
   return (
       <div className="header">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo"/>          
         <Paper square>
             <Tabs
                 value={value}

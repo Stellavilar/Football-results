@@ -17,6 +17,10 @@ $blue: #024BAE;
 $bg: url('../img/soccer.jpg');
 $mobile: url('../img/soccerMobile.jpeg');
 
+a {
+  text-decoration: none;
+}
+
 /*Desktop version*/
 
 .header {
@@ -69,6 +73,10 @@ $mobile: url('../img/soccerMobile.jpeg');
       font-weight: 900;
       padding-top: 10%;
     }
+}
+
+.league {
+  background-image: none;
 }
 
 
