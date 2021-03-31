@@ -12,13 +12,13 @@ function BurgerMenu() {
   const dispatch = useDispatch();
 
   //Onclick title tab, dispatch title on Homepage
-  const handleClick = (e, close) => {
+  const handleClick = (e) => {
     dispatch(selectTitle({
         name: e.target.innerText, 
         item1: 'Classement',
         item2: 'Calendrier',
         item3: 'Meilleurs buteurs',
-      }));      
+      }));  
   };
 
   return (
@@ -29,32 +29,11 @@ function BurgerMenu() {
             Menu
           </Button>
           <Menu {...bindMenu(popupState)}>
-            <MenuItem onClick={handleClick}>Ligue 1</MenuItem>
-            <MenuItem onClick={(e) => 
-              dispatch(selectTitle({
-                name: e.target.innerText, 
-                item1: 'Classement',
-                item2: 'Calendrier',
-                item3: 'Meilleurs buteurs',
-              }))
-            }>Premier League</MenuItem>
-            <MenuItem onClick={(e) => 
-              dispatch(selectTitle({
-                name: e.target.innerText, 
-                item1: 'Classement',
-                item2: 'Calendrier',
-                item3: 'Meilleurs buteurs',
-              }))
-            }>Liga</MenuItem>
-            <MenuItem onClick={(e) => 
-              dispatch(selectTitle({
-                name: e.target.innerText, 
-                item1: 'Classement',
-                item2: 'Calendrier',
-                item3: 'Meilleurs buteurs',
-              }))
-            }>Serie A</MenuItem>
-            <MenuItem onClick={popupState.close}>Bundesliga</MenuItem>
+            <MenuItem onClick={(e) => {handleClick(e);popupState.close()}}>Ligue 1</MenuItem>
+            <MenuItem onClick={(e) => {handleClick(e);popupState.close()}}>Premier League</MenuItem>
+            <MenuItem onClick={(e) => {handleClick(e);popupState.close()}}>Liga</MenuItem>
+            <MenuItem onClick={(e) => {handleClick(e);popupState.close()}}>Serie A</MenuItem>
+            <MenuItem onClick={(e) => {handleClick(e);popupState.close()}}>Bundesliga</MenuItem>
           </Menu>
         </React.Fragment>
       )}
