@@ -5,8 +5,12 @@ import MenuItem from '@material-ui/core/MenuItem';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import { selectTitle } from '../redux/actions';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
 
 function BurgerMenu() {
+
+  const history = useHistory();
 
   //Use dispatch to get titles clicked
   const dispatch = useDispatch();
@@ -29,11 +33,11 @@ function BurgerMenu() {
             Menu
           </Button>
           <Menu {...bindMenu(popupState)}>
-            <MenuItem onClick={(e) => {handleClick(e);popupState.close()}}>Ligue 1</MenuItem>
-            <MenuItem onClick={(e) => {handleClick(e);popupState.close()}}>Premier League</MenuItem>
-            <MenuItem onClick={(e) => {handleClick(e);popupState.close()}}>Liga</MenuItem>
-            <MenuItem onClick={(e) => {handleClick(e);popupState.close()}}>Serie A</MenuItem>
-            <MenuItem onClick={(e) => {handleClick(e);popupState.close()}}>Bundesliga</MenuItem>
+            <MenuItem onClick={(e) => {handleClick(e);popupState.close();history.push(`/${e.target.innerText.replace(/\s+/g, '').toLowerCase()}`);}}>Ligue 1</MenuItem>
+            <MenuItem onClick={(e) => {handleClick(e);popupState.close();history.push(`/${e.target.innerText.replace(/\s+/g, '').toLowerCase()}`);}}>Premier League</MenuItem>
+            <MenuItem onClick={(e) => {handleClick(e);popupState.close();history.push(`/${e.target.innerText.replace(/\s+/g, '').toLowerCase()}`);}}>Liga</MenuItem>
+            <MenuItem onClick={(e) => {handleClick(e);popupState.close();history.push(`/${e.target.innerText.replace(/\s+/g, '').toLowerCase()}`);}}>Serie A</MenuItem>
+            <MenuItem onClick={(e) => {handleClick(e);popupState.close();history.push(`/${e.target.innerText.replace(/\s+/g, '').toLowerCase()}`);}}>Bundesliga</MenuItem>
           </Menu>
         </React.Fragment>
       )}

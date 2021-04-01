@@ -1,14 +1,14 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
-import logo from '../../img/logoLigue1.png';
+import logo from '../../img/logopremierleague.png';
 import { v4 as uuid } from 'uuid';
 
 
-function Ligue1({classement}) {
+function PremierLeague({ranking}) {
 
     return (
         <div className="league">
-            <img src={logo} alt="ligue 1 logo" />
+            <img src={logo} alt="premier league logo"  className="pl-logo"/>
             <Typography variant="h2"> Saison 2020-2021 </Typography> 
             <div className="grid">
                 <div className="table-head">
@@ -21,13 +21,13 @@ function Ligue1({classement}) {
                     <div className="head">P</div>
                     <div className="last-head">+/-</div>
                 </div>
-                { classement.map((rank) => 
+                { ranking.map((rank) => 
                 <div className="table-rows" key={uuid()}>
                     <div className="logo-row" >
                         <img src ={rank.logo} alt="logo"/>
                     </div>
                     <div className="club-row">{rank.team}</div>
-                    <div className="row">{rank.points}</div>
+                    <div className="first-row">{rank.points}</div>
                     <div className="row">{rank.played}</div>
                     <div className="row">{rank.win}</div>
                     <div className="row">{rank.draw}</div>
@@ -44,4 +44,4 @@ function Ligue1({classement}) {
     );
 };
 
-export default Ligue1;
+export default PremierLeague;

@@ -5,10 +5,12 @@ import Tab from '@material-ui/core/Tab';
 import logo from '../img/Header logo FR.png';
 import { selectTitle } from '../redux/actions';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import BurgerMenu from './BurgerMenu';
 
 function Header() {
+    const history = useHistory();
     //Use dispatch to get titles clicked
     const dispatch = useDispatch();
 
@@ -22,16 +24,13 @@ function Header() {
     const handleClick = (e) => {
       dispatch(selectTitle({
           name: e.target.innerText, 
-          item1: 'Classement',
-          item2: 'Calendrier',
-          item3: 'Meilleurs buteurs',
         }));
-        
+        history.push(`/${e.target.innerText.replace(/\s+/g, '').toLowerCase()}`);
     };
 
   return (
       <div className="header">
-          <img src={logo} alt="logo"/>          
+          <img src={logo} alt="logo" onClick={()=>history.push('/')}/>          
         <Paper square>
             <Tabs
                 value={value}
