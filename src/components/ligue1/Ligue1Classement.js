@@ -1,73 +1,45 @@
 import React from 'react';
-import { Paper, Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core';
+import logo from '../../img/logoLigue1.png';
+import { v4 as uuid } from 'uuid';
 
-const useStyles = makeStyles((theme) => ({
-    paper: {
-      textAlign: 'center',
-    },
-    firstRow: {
-        textAlign: 'left'
-    }
-  }));
 
 function Ligue1({classement}) {
-    const classes = useStyles();
-    
-    //Map classement array
-    const ranking = classement.map((rank, index) =>
-        <Grid container spacing={0} key={index}>
-            <Grid item xs={2}>
-                <Paper className={classes.firstRow}>{rank.team}</Paper>
-            </Grid>
-            <Grid item xs={1}>
-                <Paper className={classes.paper}>{rank.points}</Paper>
-            </Grid>
-            <Grid item xs={1}>
-                <Paper className={classes.paper}>{rank.played}</Paper>
-            </Grid>
-            <Grid item xs={1}>
-                <Paper className={classes.paper}>{rank.win}</Paper>
-            </Grid>
-            <Grid item xs={1}>
-                <Paper className={classes.paper}>{rank.draw}</Paper>
-            </Grid>
-            <Grid item xs={1}>
-                <Paper className={classes.paper}>{rank.loss}</Paper>
-            </Grid>
-            <Grid item xs={1}>
-                <Paper className={classes.paper}>{rank.goalsFor - rank.goalsAgainst}</Paper>
-            </Grid>
-            
-        </Grid>
-    );
 
     return (
         <div className="league">
-            <Grid container spacing={0}>
-                <Grid item xs={2}>
-                    <Paper className={classes.paper}>Club</Paper>
-                </Grid>
-                <Grid item xs={1}>
-                    <Paper className={classes.paper}>Pts</Paper>
-                </Grid>
-                <Grid item xs={1}>
-                    <Paper className={classes.paper}>J</Paper>
-                </Grid>
-                <Grid item xs={1}>
-                    <Paper className={classes.paper}>G</Paper>
-                </Grid>
-                <Grid item xs={1}>
-                    <Paper className={classes.paper}>N</Paper>
-                </Grid>
-                <Grid item xs={1}>
-                    <Paper className={classes.paper}>P</Paper>
-                </Grid>
-                <Grid item xs={1}>
-                    <Paper className={classes.paper}>+/-</Paper>
-                </Grid>
-            </Grid>
-            {ranking}
+            <img src={logo} alt="ligue 1 logo" />
+            <Typography variant="h2"> Saison 2020-2021 </Typography> 
+            <div className="grid">
+                <div className="table-head">
+                    <div className="logo"></div>
+                    <div className="club">Club</div>
+                    <div className="head">Pts</div>
+                    <div className="head">J</div>
+                    <div className="head">G</div>
+                    <div className="head">N</div>
+                    <div className="head">P</div>
+                    <div className="last-head">+/-</div>
+                </div>
+                { classement.map((rank) => 
+                <div className="table-rows" key={uuid()}>
+                    <div className="logo-row" >
+                        <img src ={rank.logo} alt="logo"/>
+                    </div>
+                    <div className="club-row">{rank.team}</div>
+                    <div className="row">{rank.points}</div>
+                    <div className="row">{rank.played}</div>
+                    <div className="row">{rank.win}</div>
+                    <div className="row">{rank.draw}</div>
+                    <div className="row">{rank.loss}</div>
+                    <div className="row">{rank.goalsFor - rank.goalsAgainst}</div>
+                </div>
+                )}
+            
+            </div>
+            
+            
+            
         </div>
     );
 };
