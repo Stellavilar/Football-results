@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/football-results/static/css/main.bb160d0a.chunk.css",
-    "main.js": "/football-results/static/js/main.78a4b264.chunk.js",
-    "main.js.map": "/football-results/static/js/main.78a4b264.chunk.js.map",
+    "main.css": "/football-results/static/css/main.1c4deeaa.chunk.css",
+    "main.js": "/football-results/static/js/main.79a15330.chunk.js",
+    "main.js.map": "/football-results/static/js/main.79a15330.chunk.js.map",
     "runtime-main.js": "/football-results/static/js/runtime-main.b646d115.js",
     "runtime-main.js.map": "/football-results/static/js/runtime-main.b646d115.js.map",
     "static/js/2.a28e1eb7.chunk.js": "/football-results/static/js/2.a28e1eb7.chunk.js",
     "static/js/2.a28e1eb7.chunk.js.map": "/football-results/static/js/2.a28e1eb7.chunk.js.map",
     "index.html": "/football-results/index.html",
-    "static/css/main.bb160d0a.chunk.css.map": "/football-results/static/css/main.bb160d0a.chunk.css.map",
+    "static/css/main.1c4deeaa.chunk.css.map": "/football-results/static/css/main.1c4deeaa.chunk.css.map",
     "static/js/2.a28e1eb7.chunk.js.LICENSE.txt": "/football-results/static/js/2.a28e1eb7.chunk.js.LICENSE.txt",
     "static/media/logoLigue1.f50fd292.png": "/football-results/static/media/logoLigue1.f50fd292.png",
     "static/media/logopremierleague.927759a8.png": "/football-results/static/media/logopremierleague.927759a8.png",
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.b646d115.js",
     "static/js/2.a28e1eb7.chunk.js",
-    "static/css/main.bb160d0a.chunk.css",
-    "static/js/main.78a4b264.chunk.js"
+    "static/css/main.1c4deeaa.chunk.css",
+    "static/js/main.79a15330.chunk.js"
   ]
 }
