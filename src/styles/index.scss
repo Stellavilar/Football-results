@@ -222,7 +222,6 @@ a {
 
     .grid {
       width: 100%;
-
     }
   }
   
@@ -237,7 +236,7 @@ a {
 .league {
 
   .league-logo {
-    width: 15%;
+    width: 20%;
     margin-bottom: 5%;
   }
   .pl-logo {
@@ -256,7 +255,6 @@ a {
     width: 30%;
     margin-bottom: 5%;
   }
-
   .MuiTypography-h2 {
     margin-bottom: 2%;
     color: $blue;
@@ -267,31 +265,22 @@ a {
     width: 100%;
 
     .table-head {
-      font-size: 1em;
+      font-size: 0.8em;
 
       .logo {
         padding: 24.5px 20px;
-        
       }
     }
-
     .table-rows {
       font-size: 0.8em;
-
-      .logo-row {
-
-        img {
-          width: 100%;
-        }
-      }
+      width: 100%;
 
       .club-row {
-        padding: 15px 40px;
+        padding: 15px 30px;
         width: 30%;
         text-align: left;
       }
     }
-
   }
 }
         
