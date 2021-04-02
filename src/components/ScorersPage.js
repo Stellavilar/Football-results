@@ -1,16 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { v4 as uuid } from 'uuid';
 import axios from 'axios';
 
 function ScorersPage() {
+    const [ getScorer, setGetScorer ] = useState([])
 
     const titles = useSelector(state => state );
     const getScorers = () => {
         const league = titles.title
         axios.get(`buteurs/${league}`)
             .then((res) => {
-                console.log(res)
+                setGetScorer(res.data.scorers)
             })
             .catch((err)=> {
                 console.log(err)
@@ -20,7 +22,13 @@ function ScorersPage() {
 
     return (
         <div className="scorers-page">
-            {titles.title}
+            {getScorer.map((scorer) =>
+            <ul key={uuid()}>
+                <li>{scorer.playerName}</li>
+                <li>{scorer.club}</li>
+                <li>{scorer.goals}</li>
+            </ul>
+            )}
         </div>
     );
 };
