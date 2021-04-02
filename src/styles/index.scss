@@ -85,6 +85,12 @@ a {
     margin-bottom: 2%;
     color: $blue;
   }
+  .MuiButton-containedSecondary {
+    align-self: start;
+  }
+  .MuiButton-containedPrimary {
+    align-self: start;
+  }
 
   .grid {
     width: 60%;

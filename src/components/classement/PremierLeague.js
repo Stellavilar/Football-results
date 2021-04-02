@@ -1,15 +1,43 @@
-import React from 'react';
-import { Typography } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Typography, Button } from '@material-ui/core';
 import logo from '../../img/logopremierleague.png';
 import { v4 as uuid } from 'uuid';
-
+import { useDispatch } from 'react-redux';
+import { selectTitle } from '../../redux/actions';
+import ScorersPage from '../ScorersPage';
 
 function PremierLeague({ranking}) {
+    const dispatch = useDispatch();
+
+     /**Display top scorers page */
+     const [ showResults, setShowResults ] = useState(false);
+
+    const dispatchLeagueName = () => {
+        //Open scorers page
+        setShowResults(true);
+        //get league name through the url
+        const url_string = window.location.href ;
+        //Use dispatch redux to send league title to state
+        dispatch(selectTitle(url_string.slice(url_string.lastIndexOf('/') + 1)));
+    };
+
+    const hideScorers = () => {
+        //Clode scorers page
+        setShowResults(false);
+        //Clean the state
+        dispatch(selectTitle(""));
+    };
 
     return (
         <div className="league">
+            { showResults ? 
+            <Button variant="contained" color="primary" onClick={() => hideScorers()} >Classement</Button> 
+            : 
+            <Button variant="contained" color="secondary" onClick={dispatchLeagueName} >Buteurs</Button>
+            }
             <img src={logo} alt="premier league logo"  className="pl-logo"/>
             <Typography variant="h2"> Saison 2020-2021 </Typography> 
+            { showResults ? <ScorersPage /> :
             <div className="grid">
                 <div className="table-head">
                     <div className="logo"></div>
@@ -35,11 +63,7 @@ function PremierLeague({ranking}) {
                     <div className="row">{rank.goalsFor - rank.goalsAgainst}</div>
                 </div>
                 )}
-            
-            </div>
-            
-            
-            
+            </div> }
         </div>
     );
 };
