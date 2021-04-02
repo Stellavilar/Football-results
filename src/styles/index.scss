@@ -84,6 +84,7 @@ a {
   .MuiTypography-h2 {
     margin-bottom: 2%;
     color: $blue;
+    text-align: center;
   }
   .MuiButton-containedSecondary {
     align-self: start;
@@ -160,6 +161,19 @@ a {
       }
     }
   }
+
+  .scorers-page {
+    display: flex;
+    flex-direction: row;
+
+    .MuiCard-root {
+      width: 25%;
+      margin-right: 10px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 1px 1px 12px #555;
+    }
+  }
 }
 
 
@@ -229,6 +243,14 @@ a {
     .grid {
       width: 100%;
     }
+    .scorers-page {
+      display: flex;
+      flex-direction: column;
+
+      .MuiCard-root {
+        width: 100%;
+      }
+    }
   }
   
 }
@@ -285,6 +307,15 @@ a {
         padding: 15px 30px;
         width: 30%;
         text-align: left;
+      }
+    }
+
+    .scorers-page {
+      display: flex;
+      flex-direction: column;
+
+      .MuiCard-root {
+        width: 100%;
       }
     }
   }
