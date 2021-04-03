@@ -1,45 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Card, CardContent, makeStyles, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { v4 as uuid } from 'uuid';
 import axios from 'axios';
 
-const useStyles = makeStyles({
-    root: {
-        display: "flex",
-        flexDirection: "column"
-    },
-    number: {
-        fontWeight: "bold",
-        textAlign: "center",
-        fontSize: "1.5em",
-        borderBottom: "solid 0.5px",
-    },
-    club: {
-        fontStyle: "italic",
-        textAlign: "center"
-    },
-    name: {
-        fontWeight: "bold",
-        textAlign: "center",
-        fontSize: "1.3em",
-        marginTop: "25px"
-    },
-    data: {
-        display: "flex"
-    },
-    title: {
-        fontWeight: "bold",
-        marginRight:"8px"
-    },
-    result: {
-
-    }
-});
 
 function ScorersPage() {
-    const classes = useStyles();
 
     const [ getScorer, setGetScorer ] = useState([])
 
@@ -57,25 +24,23 @@ function ScorersPage() {
     useEffect(() => {getScorers()}, []);
 
     return (
-        <div className="scorers-page">
-            <Typography variant="h2"> Meilleurs buteurs </Typography>
-            {getScorer.map((scorer) =>
-            <Card key={uuid()} variant="outlined">
-                <CardContent className={classes.root}>
-                    <Typography className={classes.number} color="textSecondary">{scorer.number}</Typography>
-                    <Typography className={classes.name}>{scorer.playerName}</Typography>
-                    <Typography className={classes.club} color="textSecondary">{scorer.club}</Typography>
-                    <CardContent className={classes.data}>
-                        <Typography className={classes.title}>Total buts:</Typography>
-                        <Typography className={classes.result}>{scorer.goals}</Typography>
-                    </CardContent>
-                    <CardContent className={classes.data}>
-                        <Typography className={classes.title}>Penalties:</Typography>
-                        <Typography className={classes.result}>{scorer.penalties}</Typography>
-                    </CardContent>
-                </CardContent>
-            </Card>
-            
+        <div className="grid">
+            <Typography variant="h3">Meilleurs buteurs</Typography>
+            <div className="table-head">
+                    <div className="logo"></div>
+                    <div className="club">Nom</div>
+                    <div className="club">Club</div>
+                    <div className="club">Buts</div>
+                    <div className="penalty-head">Penalties</div>
+            </div>
+            {getScorer.map((scorer) => 
+            <div className="table-rows" key={uuid()}>
+                <div className="number-row">{scorer.number}</div>
+                <div className="club-row">{scorer.playerName}</div>
+                <div className="club-row">{scorer.club}</div>
+                <div className="result-row">{scorer.goals}</div>
+                <div className="result-row">{scorer.penalties}</div>
+            </div>
             )}
         </div>
     );

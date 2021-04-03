@@ -97,16 +97,21 @@ a {
     width: 60%;
     font-family: roboto;
 
+    .MuiTypography-h3 {
+      font-size: 2em;
+      // text-align: center;
+    }
+
     .table-head {
       display: flex;
       text-align: center;
       align-items: center;
-      font-size: 1.2em;
+      font-size: 1em;
       font-weight: bold;
       
       .logo {
         background-color: $grey;
-        padding: 26.5px 20px;
+        padding: 24.5px 20px;
         width: 5%;
         border-radius: 15px 0px 0px 0px;
         
@@ -128,6 +133,12 @@ a {
         width: 10%;
         border-radius: 0px 15px 0px 0px;
       }
+      .penalty-head{
+        background-color: $grey;
+        padding: 15px 10px;
+        width: 20%;
+        border-radius: 0px 15px 0px 0px;
+      }
     }
     .table-rows {
       display: flex;
@@ -137,14 +148,16 @@ a {
       border-bottom: solid 0.5px $grey;
 
       .logo-row {
-        padding: 9px 20px;
         width: 5%;
+        font-weight: bold;
 
         img {
-          width: 30px;
+          width: 20px;
         }
       }
-      
+      .number-row {
+        margin-left: 20px;
+      }
       .club-row {
         padding: 15px 40px;
         width: 20%;
@@ -158,6 +171,11 @@ a {
       .row {
         padding: 15px 10px;
         width: 10%;      
+      }
+      .result-row {
+        padding: 15px 40px;
+        width: 20%;
+        font-weight: bold;
       }
     }
   }
@@ -294,9 +312,10 @@ a {
 
     .table-head {
       font-size: 0.8em;
+      width: 100%;
 
       .logo {
-        padding: 24.5px 20px;
+        padding: 23px 20px;
       }
     }
     .table-rows {
