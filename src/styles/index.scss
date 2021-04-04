@@ -274,6 +274,14 @@ a {
       }
     }
   }
+
+  .game-day {
+    padding: 0% !important;
+  
+    .MuiTypography-h3 {
+      font-size: 1.6em;
+    }
+  }
   
 }
 
@@ -345,7 +353,7 @@ a {
 }
 
 .game-day {
-  padding: 20px !important;
+  padding: 0% !important;
 
   .MuiTypography-h3 {
     font-size: 1.6em;

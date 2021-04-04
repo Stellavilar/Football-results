@@ -92,7 +92,7 @@ function GameDay() {
     
     return (
         <div className="game-day">
-            <Typography variant="h3" className={classes.title}> Journée {gameDay}/38 </Typography>
+            <Typography variant="h3" className={classes.title}> {gameDay}/38 </Typography>
             {getGameDay.map((game) => 
             <Card key={uuid()} variant="outlined" style={{backgroundColor: game.color, marginBottom: "2%", borderRadius: "10px"}} >
                 <CardContent className={classes.root}>
