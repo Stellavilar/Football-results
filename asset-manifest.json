@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/football-results/static/css/main.14f18ba9.chunk.css",
-    "main.js": "/football-results/static/js/main.a74c710f.chunk.js",
-    "main.js.map": "/football-results/static/js/main.a74c710f.chunk.js.map",
+    "main.css": "/football-results/static/css/main.7fb9b112.chunk.css",
+    "main.js": "/football-results/static/js/main.9a04d384.chunk.js",
+    "main.js.map": "/football-results/static/js/main.9a04d384.chunk.js.map",
     "runtime-main.js": "/football-results/static/js/runtime-main.b646d115.js",
     "runtime-main.js.map": "/football-results/static/js/runtime-main.b646d115.js.map",
-    "static/js/2.0158fba0.chunk.js": "/football-results/static/js/2.0158fba0.chunk.js",
-    "static/js/2.0158fba0.chunk.js.map": "/football-results/static/js/2.0158fba0.chunk.js.map",
+    "static/js/2.644c6d73.chunk.js": "/football-results/static/js/2.644c6d73.chunk.js",
+    "static/js/2.644c6d73.chunk.js.map": "/football-results/static/js/2.644c6d73.chunk.js.map",
     "index.html": "/football-results/index.html",
-    "static/css/main.14f18ba9.chunk.css.map": "/football-results/static/css/main.14f18ba9.chunk.css.map",
-    "static/js/2.0158fba0.chunk.js.LICENSE.txt": "/football-results/static/js/2.0158fba0.chunk.js.LICENSE.txt",
+    "static/css/main.7fb9b112.chunk.css.map": "/football-results/static/css/main.7fb9b112.chunk.css.map",
+    "static/js/2.644c6d73.chunk.js.LICENSE.txt": "/football-results/static/js/2.644c6d73.chunk.js.LICENSE.txt",
     "static/media/logoLigue1.f50fd292.png": "/football-results/static/media/logoLigue1.f50fd292.png",
     "static/media/logopremierleague.927759a8.png": "/football-results/static/media/logopremierleague.927759a8.png",
     "static/media/serialogo.912a7d29.png": "/football-results/static/media/serialogo.912a7d29.png",
@@ -17,8 +17,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b646d115.js",
-    "static/js/2.0158fba0.chunk.js",
-    "static/css/main.14f18ba9.chunk.css",
-    "static/js/main.a74c710f.chunk.js"
+    "static/js/2.644c6d73.chunk.js",
+    "static/css/main.7fb9b112.chunk.css",
+    "static/js/main.9a04d384.chunk.js"
   ]
 }
