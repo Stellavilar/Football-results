@@ -5,9 +5,11 @@ import { v4 as uuid } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { selectTitle } from '../../redux/actions';
 import ScorersPage from '../ScorersPage';
+import { useHistory} from 'react-router-dom';
 
 
 function Ligue1({classement}) {
+    const history = useHistory();
     const dispatch = useDispatch();
 
      /**Display top scorers page */
@@ -31,6 +33,7 @@ function Ligue1({classement}) {
 
     return (
         <div className="league">
+            <Button variant="contained" color="secondary" onClick={() => history.push(`/calendrier/ligue1`)} >Calendrier</Button>
             { showResults ? 
             <Button variant="contained" color="primary" onClick={() => hideScorers()} >Classement</Button> 
             : 

@@ -11,6 +11,8 @@ import PremierLeague from './classement/PremierLeague';
 import Liga from './classement/Liga';
 import SerieA from './classement/SerieA';
 import Bundesliga from './classement/Bundesliga';
+import Calendar from './Calendar';
+import GameDay from './GameDay';
 
 function App() {
 
@@ -107,6 +109,14 @@ function App() {
         <Route exact path="/bundesliga">
           <Header />
           <Bundesliga germanRanking={germanRanking}/>
+        </Route>
+        <Route exact path="/calendrier/:ligue">
+          <Header />
+          <Calendar/>
+        </Route>
+        <Route exact path="/journee/:numero/league/:ligue">
+          <Header />
+          <GameDay/>
         </Route>
       </Switch>
       
