@@ -14,6 +14,7 @@ function Calendar() {
     const handleClick = (e) => {
         const gameNumber = e.target.innerText;
         history.push(`/journee/${gameNumber}/league/${league}`);
+        window.location.reload(false)
     };
 
     return (

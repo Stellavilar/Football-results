@@ -116,6 +116,7 @@ function App() {
         </Route>
         <Route exact path="/journee/:numero/league/:ligue">
           <Header />
+          <Calendar/>
           <GameDay/>
         </Route>
       </Switch>

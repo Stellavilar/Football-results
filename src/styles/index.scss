@@ -194,6 +194,10 @@ a {
   }
 }
 
+.game-day {
+  padding: 2% 25%;
+}
+
 
 /*Tablette version*/
 @media only screen and (max-width: 1400px) {
@@ -337,6 +341,14 @@ a {
         width: 100%;
       }
     }
+  }
+}
+
+.game-day {
+  padding: 20px !important;
+
+  .MuiTypography-h3 {
+    font-size: 1.6em;
   }
 }
         

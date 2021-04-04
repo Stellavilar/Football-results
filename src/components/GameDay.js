@@ -1,8 +1,43 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect }  from 'react';
+import { Card, CardContent, makeStyles, Typography } from '@material-ui/core';
+import { v4 as uuid } from 'uuid';
 import axios from 'axios';
 
+const useStyles = makeStyles({
+    root: {
+        display: "flex",
+        flexDirection: "column",
+    },
+    title: {
+        textAlign: "center",
+        marginBottom: "5%",
+        color: "#024BAE"
+    },
+    datePart: {
+        alignSelf: "center"
+    },
+    date: {
+        fontWeight: "bold",
+        fontSize: "1.5em"
+    },
+    hour: {
+        textAlign: "center",
+        fontWeight: "bold",
+        color: "grey"
+    },
+    scorePart: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-around"
+    },
+    score: {
+        fontWeight: "bold"
+    }
+});
+
 function GameDay() {
+    const classes = useStyles();
     
     //Get league name thanks to url
     const url_string = window.location.href
@@ -19,21 +54,65 @@ function GameDay() {
     const getCalendar = () => {
         axios.get(`calendrier/${league}`)
             .then((res) => {
-                if(gameDay === "31"){
-                    setGetGameDay(res.data.day31[0])
+                switch(gameDay) {
+                    case '31':
+                        setGetGameDay(res.data.day31);
+                    break;
+                    case '32':
+                        setGetGameDay(res.data.day32);
+                    break;
+                    case '33':
+                        setGetGameDay(res.data.day33);
+                    break;
+                    case '34':
+                        setGetGameDay(res.data.day34);
+                    break;
+                    case '35':
+                        setGetGameDay(res.data.day35);
+                    break;
+                    case '36':
+                        setGetGameDay(res.data.day36);
+                    break;
+                    case '37':
+                        setGetGameDay(res.data.day37);
+                    break;
+                    case '38':
+                        setGetGameDay(res.data.day38);
+                    break;
+                    default:
+                        console.log("No data")
                 }
             })
             .catch((err) => {
                 console.log(err)
             })
     };
-    console.log(getGameDay)
 
     useEffect(() => {getCalendar()}, [])
     
     return (
         <div className="game-day">
-            Journée
+            <Typography variant="h3" className={classes.title}> Journée {gameDay}/38 </Typography>
+            {getGameDay.map((game) => 
+            <Card key={uuid()} variant="outlined" style={{backgroundColor: game.color, marginBottom: "2%", borderRadius: "10px"}} >
+                <CardContent className={classes.root}>
+                    <CardContent className={classes.datePart}>
+                        <Typography className={classes.date}>{game.when}</Typography>
+                        <Typography className={classes.hour}>{game.hour}</Typography>
+                    </CardContent>
+                    <CardContent className={classes.scorePart}>
+                        <CardContent className={classes.score}>
+                            <Typography>{game.team1.teamName}</Typography>
+                            <Typography>{game.team2.teamName}</Typography>
+                        </CardContent>
+                        <CardContent className={classes.score}>
+                            <Typography  className={classes.score}>{game.team1.teamScore}</Typography>
+                            <Typography className={classes.score}>{game.team2.teamScore}</Typography>
+                        </CardContent>
+                    </CardContent>
+                </CardContent>
+            </Card>
+            )}
         </div>
     )
 };
