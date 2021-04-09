@@ -202,6 +202,19 @@ a {
   padding: 2% 25%;
 }
 
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+  
+  nav {
+    text-transform: uppercase;
+    color: $blue;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}
 
 /*Tablette version*/
 @media only screen and (max-width: 1400px) {
@@ -366,6 +379,10 @@ a {
   .MuiTypography-h3 {
     font-size: 1.6em;
   }
+}
+
+.calendar {
+  padding: 0px 15px;
 }
         
 }

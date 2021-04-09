@@ -20,29 +20,29 @@ function Calendar() {
     return (
         <div className="calendar">
             <Breadcrumbs aria-label="breadcrumb">
-                <Typography color="inherit">Journée: </Typography>
-                <Link color="inherit" onClick={handleClick} >
+                <Typography >Journée: </Typography>
+                <Link  onClick={handleClick} >
                     31
                 </Link>
-                <Link color="inherit" onClick={handleClick}>
+                <Link  onClick={handleClick}>
                     32
                 </Link>
-                <Link color="inherit" onClick={handleClick}>
+                <Link  onClick={handleClick}>
                     33
                 </Link>
-                <Link color="inherit" onClick={handleClick}>
+                <Link  onClick={handleClick}>
                     34
                 </Link>
-                <Link color="inherit" onClick={handleClick}>
+                <Link  onClick={handleClick}>
                     35
                 </Link>
-                <Link color="inherit" onClick={handleClick}>
+                <Link  onClick={handleClick}>
                     36
                 </Link>
-                <Link color="inherit" onClick={handleClick}>
+                <Link  onClick={handleClick}>
                     37
                 </Link>
-                <Link color="inherit" onClick={handleClick}>
+                <Link  onClick={handleClick}>
                     38
                 </Link>
             </Breadcrumbs>
