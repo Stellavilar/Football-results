@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Breadcrumbs, Link } from '@material-ui/core';
 import logo from '../../img/logoLigue1.png';
 import { v4 as uuid } from 'uuid';
 import { useDispatch } from 'react-redux';
@@ -33,12 +33,14 @@ function Ligue1({classement}) {
 
     return (
         <div className="league">
-            <Button variant="contained" color="secondary" onClick={() => history.push(`/calendrier/ligue1`)} >Calendrier</Button>
-            { showResults ? 
-            <Button variant="contained" color="primary" onClick={() => hideScorers()} >Classement</Button> 
-            : 
-            <Button variant="contained" color="secondary" onClick={dispatchLeagueName} >Buteurs</Button>
-            }
+            <Breadcrumbs aria-label="breadcrumb">
+                <Link color="inherit" onClick={() => history.push(`/calendrier/ligue1`)} >Calendrier</Link>
+                { showResults ? 
+                <Link color="inherit" onClick={() => hideScorers()} >Classement</Link> 
+                : 
+                <Link color="inherit" onClick={dispatchLeagueName} >Buteurs</Link>
+                }
+            </Breadcrumbs>
             <img src={logo} alt="ligue 1 logo" className="league-logo" />
             <Typography variant="h2"> Saison 2020-2021 </Typography> 
 

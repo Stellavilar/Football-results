@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Breadcrumbs, Link} from '@material-ui/core';
 import logo from '../../img/laligalogo.png';
 import { v4 as uuid } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { selectTitle } from '../../redux/actions';
 import ScorersPage from '../ScorersPage';
-
+import { useHistory} from 'react-router-dom';
 
 function Liga({spanishRanking}) {
     const dispatch = useDispatch();
+    const history = useHistory();
 
      /**Display top scorers page */
      const [ showResults, setShowResults ] = useState(false);
@@ -31,11 +32,14 @@ function Liga({spanishRanking}) {
 
     return (
         <div className="league">
-            { showResults ? 
-            <Button variant="contained" color="primary" onClick={() => hideScorers()} >Classement</Button> 
-            : 
-            <Button variant="contained" color="secondary" onClick={dispatchLeagueName} >Buteurs</Button>
-            }
+            <Breadcrumbs aria-label="breadcrumb">
+                <Link color="inherit" onClick={() => history.push(`/calendrier/liga`)} >Calendrier</Link>
+                { showResults ? 
+                <Link color="inherit" onClick={() => hideScorers()} >Classement</Link> 
+                : 
+                <Link color="inherit" onClick={dispatchLeagueName} >Buteurs</Link>
+                }
+            </Breadcrumbs>
             <img src={logo} alt="liga logo" className="liga-logo"/>
             <Typography variant="h2"> Saison 2020-2021 </Typography> 
             { showResults ? <ScorersPage /> :

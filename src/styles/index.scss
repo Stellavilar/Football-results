@@ -86,10 +86,14 @@ a {
     color: $blue;
     text-align: center;
   }
-  .MuiButton-containedSecondary {
+  nav {
     align-self: start;
+
   }
-  .MuiButton-containedPrimary {
+  .MuiBreadcrumbs-ol {
+    color: $blue;
+    margin-bottom: 5%;
+    text-transform: uppercase;
     align-self: start;
   }
 
@@ -261,7 +265,9 @@ a {
       color: $blue;
       font-size: 2em;
     }
-
+    nav {
+      align-self: center;
+    }
     .grid {
       width: 100%;
     }
@@ -318,7 +324,9 @@ a {
     color: $blue;
     font-size: 1.6em;
   }
-
+  nav {
+    align-self: center;
+  }
   .grid {
     width: 100%;
 

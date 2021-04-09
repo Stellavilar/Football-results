@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Breadcrumbs, Link} from '@material-ui/core';
 import logo from '../../img/logopremierleague.png';
 import { v4 as uuid } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { selectTitle } from '../../redux/actions';
 import ScorersPage from '../ScorersPage';
+import { useHistory} from 'react-router-dom';
 
 function PremierLeague({ranking}) {
+    const history = useHistory();
     const dispatch = useDispatch();
 
      /**Display top scorers page */
@@ -30,11 +32,14 @@ function PremierLeague({ranking}) {
 
     return (
         <div className="league">
-            { showResults ? 
-            <Button variant="contained" color="primary" onClick={() => hideScorers()} >Classement</Button> 
-            : 
-            <Button variant="contained" color="secondary" onClick={dispatchLeagueName} >Buteurs</Button>
-            }
+            <Breadcrumbs aria-label="breadcrumb">
+                <Link color="inherit" onClick={() => history.push(`/calendrier/premierleague`)} >Calendrier</Link>
+                { showResults ? 
+                <Link color="inherit" onClick={() => hideScorers()} >Classement</Link> 
+                : 
+                <Link color="inherit" onClick={dispatchLeagueName} >Buteurs</Link>
+                }
+            </Breadcrumbs>
             <img src={logo} alt="premier league logo"  className="pl-logo"/>
             <Typography variant="h2"> Saison 2020-2021 </Typography> 
             { showResults ? <ScorersPage /> :
