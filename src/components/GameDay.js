@@ -55,6 +55,9 @@ function GameDay() {
         axios.get(`calendrier/${league}`)
             .then((res) => {
                 switch(gameDay) {
+                    case '30':
+                        setGetGameDay(res.data.day30);
+                    break;
                     case '31':
                         setGetGameDay(res.data.day31);
                     break;

@@ -22,6 +22,9 @@ function Calendar() {
             <Breadcrumbs aria-label="breadcrumb">
                 <Typography >Journée: </Typography>
                 <Link  onClick={handleClick} >
+                    30
+                </Link>
+                <Link  onClick={handleClick} >
                     31
                 </Link>
                 <Link  onClick={handleClick}>
