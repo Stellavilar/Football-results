@@ -5,6 +5,7 @@ import { v4 as uuid } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { selectTitle } from '../../redux/actions';
 import ScorersPage from '../ScorersPage';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useHistory} from 'react-router-dom';
 
 
@@ -13,7 +14,7 @@ function Ligue1({classement}) {
     const dispatch = useDispatch();
 
      /**Display top scorers page */
-     const [ showResults, setShowResults ] = useState(false);
+    const [ showResults, setShowResults ] = useState(false);
 
     const dispatchLeagueName = () => {
         //Open scorers page
@@ -31,6 +32,9 @@ function Ligue1({classement}) {
         dispatch(selectTitle(""));
     };
 
+    //Get rank numbers from 1 to 20
+    // const rankNumbers = Array(20).fill(1).map((_, i) => i + 1);
+ 
     return (
         <div className="league">
             <Breadcrumbs aria-label="breadcrumb">
@@ -44,33 +48,34 @@ function Ligue1({classement}) {
             <img src={logo} alt="ligue 1 logo" className="league-logo" />
             <Typography variant="h2"> Saison 2020-2021 </Typography> 
 
-            { showResults ? <ScorersPage /> : 
-                <div className="grid">
-                    <div className="table-head">
-                        <div className="logo"></div>
-                        <div className="club">Club</div>
-                        <div className="head">Pts</div>
-                        <div className="head">J</div>
-                        <div className="head">G</div>
-                        <div className="head">N</div>
-                        <div className="head">P</div>
-                        <div className="last-head">+/-</div>
-                    </div>
-                    { classement.map((rank) => 
-                    <div className="table-rows" key={uuid()}>
-                        <div className="logo-row" >
-                            <img src ={rank.logo} alt="logo"/>
-                        </div>
-                        <div className="club-row">{rank.team}</div>
-                        <div className="first-row">{rank.points}</div>
-                        <div className="row">{rank.played}</div>
-                        <div className="row">{rank.win}</div>
-                        <div className="row">{rank.draw}</div>
-                        <div className="row">{rank.loss}</div>
-                        <div className="row">{rank.goalsFor - rank.goalsAgainst}</div>
-                    </div>
-                    )}
-                </div>}
+            { showResults ? <ScorersPage /> :
+                <div>
+                    <Container fluid>
+                        <Row className="show-grid" style={{ backgroundColor:'#ecf0f1', padding: '10px', fontWeight:'bold', borderRadius: '15px 15px 0px 0px'}} >
+                            <Col md={1} xs={1}></Col>
+                            <Col md={3} xs={3}>Club</Col>
+                            <Col md={1} xs={1}>Pts</Col>
+                            <Col md={1} xs={1}>J</Col>
+                            <Col md={1} xs={1} >G</Col>
+                            <Col md={1} xs={1}>N</Col>
+                            <Col md={1} xs={1}>P</Col>
+                            <Col md={1} xs={1}>+/-</Col>
+                        </Row>
+                        {classement.map((rank) => 
+                        <Row style={{ padding: '10px 0px'}} key={uuid()} >
+                            <Col md={1} xs={1} > <img src ={rank.logo} alt="logo" style={{ width: '20px'}} /> </Col>
+                            <Col md={3} xs={3}>{rank.team}</Col>
+                            <Col md={1} xs={1} style={{fontWeight: 'bold'}} > {rank.points} </Col>
+                            <Col md={1} xs={1}> {rank.played} </Col>
+                            <Col md={1} xs={1}> {rank.win} </Col>
+                            <Col md={1} xs={1}> {rank.draw} </Col>
+                            <Col md={1} xs={1}> {rank.loss} </Col>
+                            <Col md={1} xs={1}> {rank.goalsFor - rank.goalsAgainst} </Col>
+                        </Row>
+                        )}
+                    </Container>
+                </div>
+            }
         </div>
     );
 };
