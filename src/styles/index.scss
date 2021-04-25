@@ -97,106 +97,6 @@ a {
     text-transform: uppercase;
     align-self: start;
   }
-
-  .grid {
-    width: 60%;
-    font-family: roboto;
-
-    .MuiTypography-h3 {
-      font-size: 2em;
-      // text-align: center;
-    }
-
-    .table-head {
-      display: flex;
-      text-align: center;
-      align-items: center;
-      font-size: 1em;
-      font-weight: bold;
-      
-      .logo {
-        background-color: $grey;
-        padding: 24.5px 20px;
-        width: 5%;
-        border-radius: 15px 0px 0px 0px;
-        
-      }
-      .club {
-        background-color: $grey;
-        padding: 15px 40px;
-        width: 20%;
-        text-align: left;
-      }
-      .head {
-        background-color: $grey;
-        padding: 15px 10px;
-        width: 10%;
-      }
-      .last-head {
-        background-color: $grey;
-        padding: 15px 10px;
-        width: 10%;
-        border-radius: 0px 15px 0px 0px;
-      }
-      .penalty-head{
-        background-color: $grey;
-        padding: 15px 10px;
-        width: 20%;
-        border-radius: 0px 15px 0px 0px;
-      }
-    }
-    .table-rows {
-      display: flex;
-      align-items: center;
-      font-size: 1em;
-      text-align: center;
-      border-bottom: solid 0.5px $grey;
-
-      .logo-row {
-        width: 5%;
-        font-weight: bold;
-
-        img {
-          width: 20px;
-        }
-      }
-      .number-row {
-        margin-left: 20px;
-      }
-      .club-row {
-        padding: 15px 40px;
-        width: 20%;
-        text-align: left;
-      }
-      .first-row {
-        padding: 15px 10px;
-        width: 10%; 
-        font-weight: bold;     
-      }
-      .row {
-        padding: 15px 10px;
-        width: 10%;      
-      }
-      .result-row {
-        padding: 15px 40px;
-        width: 20%;
-        font-weight: bold;
-      }
-    }
-  }
-
-  .scorers-page {
-    display: flex;
-    flex-direction: row;
-
-    .MuiCard-root {
-      width: 25%;
-      margin-right: 10px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 1px 1px 12px #555;
-    }
-  }
 }
 
 .game-day {
@@ -282,17 +182,6 @@ a {
     nav {
       align-self: center;
     }
-    .grid {
-      width: 100%;
-    }
-    .scorers-page {
-      display: flex;
-      flex-direction: column;
-
-      .MuiCard-root {
-        width: 100%;
-      }
-    }
   }
 
   .game-day {
@@ -340,37 +229,6 @@ a {
   }
   nav {
     align-self: center;
-  }
-  .grid {
-    width: 100%;
-
-    .table-head {
-      font-size: 0.8em;
-      width: 100%;
-
-      .logo {
-        padding: 23px 20px;
-      }
-    }
-    .table-rows {
-      font-size: 0.8em;
-      width: 100%;
-
-      .club-row {
-        padding: 15px 30px;
-        width: 30%;
-        text-align: left;
-      }
-    }
-
-    .scorers-page {
-      display: flex;
-      flex-direction: column;
-
-      .MuiCard-root {
-        width: 100%;
-      }
-    }
   }
 }
 
