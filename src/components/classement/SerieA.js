@@ -44,7 +44,6 @@ function SerieA({italianRanking}) {
             <img src={logo} alt="serie a logo"  className="seriea-logo"/>
             <Typography variant="h2"> Saison 2020-2021 </Typography> 
             { showResults ? <ScorersPage /> :
-                <div>
                     <Container fluid>
                         <Row className="show-grid" style={{ backgroundColor:'#ecf0f1', padding: '10px', fontWeight:'bold', borderRadius: '15px 15px 0px 0px'}} >
                             <Col md={1} xs={1}></Col>
@@ -69,7 +68,6 @@ function SerieA({italianRanking}) {
                         </Row>
                         )}
                     </Container>
-                </div>
             }
         </div>
     );
