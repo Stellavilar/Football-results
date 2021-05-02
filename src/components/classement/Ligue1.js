@@ -52,6 +52,7 @@ function Ligue1({classement}) {
                     <Container fluid>
                         <Row className="show-grid" style={{ backgroundColor:'#ecf0f1', padding: '10px', fontWeight:'bold', borderRadius: '15px 15px 0px 0px'}} >
                             <Col md={1} xs={1}></Col>
+                            <Col md={1} xs={1}></Col>
                             <Col md={3} xs={3}>Club</Col>
                             <Col md={1} xs={1}>Pts</Col>
                             <Col md={1} xs={1}>J</Col>
@@ -62,6 +63,7 @@ function Ligue1({classement}) {
                         </Row>
                         {classement.map((rank) => 
                         <Row style={{ padding: '10px 0px'}} key={uuid()} >
+                            <Col md={1} xs={1} style={{ fontWeight: 'bold' }} >{rank.number}.</Col>
                             <Col md={1} xs={1} > <img src ={rank.logo} alt="logo" style={{ width: '20px'}} /> </Col>
                             <Col md={3} xs={3}>{rank.team}</Col>
                             <Col md={1} xs={1} style={{fontWeight: 'bold'}} > {rank.points} </Col>
